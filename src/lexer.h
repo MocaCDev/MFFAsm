@@ -10,6 +10,7 @@ typedef struct token
   {
     TOKEN_INIT,
     TOKEN_TARGET_K,
+    TOKEN_ALIGN_K,
     TOKEN_SET_STACK_K,
     TOKEN_WORD,
     TOKEN_EOF
@@ -28,6 +29,5 @@ typedef struct lexer
 
 Lexer *__init__(char *data);
 Token *lex_next(Lexer *lex);
-
 
 #endif

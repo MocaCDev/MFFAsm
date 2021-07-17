@@ -1,6 +1,6 @@
-#ifndef PRS
-#define PRS
+#pragma once
 #include "lexer.h"
+#include "primary.h"
 
 typedef struct _parser
 {
@@ -10,4 +10,4 @@ typedef struct _parser
 
 void parser_pickup(Token *t, Lexer *lex);
 
-#endif
+//#endif

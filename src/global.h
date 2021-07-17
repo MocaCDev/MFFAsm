@@ -1,5 +1,5 @@
-#ifndef GLB
-#define GLB
+#pragma once
+
 #include <stdlib.h>
 #include <math.h>
 #include <stdint.h>
@@ -23,10 +23,13 @@
 #define DEFAULT_STACK_SIZE  0xFFFF
 #define MAX_STACK_SIZE      0xFFFF0
 
+#define DEFAULT_DEPTH   1
+#define MAX_DEPTH       5 // no more than 2560 bytes per entry
+
 int str_len(char *string);
 int cmp_str(char *a, char *b);
 int is_ascii(char c);
 int is_hex(char *val);
 long int convert(char *val);
 
-#endif
+//#endif
