@@ -1,5 +1,6 @@
 #ifndef GLB
 #define GLB
+#include <stdlib.h>
 
 #if defined(__linux__)
 #define LINUX

@@ -32,6 +32,7 @@ static _Parser *set_stack(_Parser *p)
   get_next(p);
   printf("BASE: %s\n", p->curr_token->token_value);
   get_next(p);
+  convert(p->curr_token->token_value);
   printf("LIMIT: %s\n", p->curr_token->token_value);
 }
 

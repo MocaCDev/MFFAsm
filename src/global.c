@@ -43,9 +43,19 @@ int is_hex(char *val)
   return 1;
 }
 
+#include <stdio.h>
 long int convert(char *val)
 {
   int number = 0;
+  int power = 0;
 
-  for(int i = 0; i < str_len(val))
+  int curr_number = 0;
+
+  for(int i = 2; i < str_len(val); i++)
+  {
+    number += (16 * power) * atoi(&val[i]);
+    power++;
+  }
+
+  printf("%d", number);
 }
