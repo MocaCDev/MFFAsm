@@ -48,10 +48,18 @@ long int convert(char *val)
 {
   long int number = 0;
 
-  while(*val)
+  char *num = calloc(str_len(val)-2, sizeof(*num));
+  int index = 0;
+
+  for(int i = 1; i < str_len(val); i++)
   {
-    *val+=2;
-    uint8_t b = *val++;
+    num[index] = val[i];
+    index++;
+  }
+
+  while(*num)
+  {
+    uint8_t b = *num++;
 
     if(b >= '0' && b <= '9') b = b - '0';
     else if (b >= 'a' && b <='f') b = b - 'a' + 10;
