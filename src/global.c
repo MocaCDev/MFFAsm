@@ -46,16 +46,18 @@ int is_hex(char *val)
 #include <stdio.h>
 long int convert(char *val)
 {
-  int number = 0;
-  int power = 0;
+  long int number = 0;
 
-  int curr_number = 0;
-
-  for(int i = 2; i < str_len(val); i++)
+  while(*val)
   {
-    number += (16 * power) * atoi(&val[i]);
-    power++;
+    *val+=2;
+    uint8_t b = *val++;
+
+    if(b >= '0' && b <= '9') b = b - '0';
+    else if (b >= 'a' && b <='f') b = b - 'a' + 10;
+    else if (b >= 'A' && b <='F') b = b - 'A' + 10;
+    number = (number << 4) | (b & 0xF);
   }
 
-  printf("%d", number);
+  printf("\n%ld\n", number);
 }
